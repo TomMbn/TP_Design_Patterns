@@ -4,7 +4,7 @@
 
 Le pattern Builder résout le problème du **"Télescopage de constructeurs"** (Telescoping Constructor Anti-pattern) et permet de **créer pas à pas des objets complexes**. 
 
-**Exemple du problème :** Imaginez que vous deviez créer un objet `Ordinateur`. Un ordinateur peut avoir un CPU, de la RAM, un disque dur, mais il peut aussi avoir une carte graphique (ou non), un système de refroidissement liquide (ou non), des LEDs RGB (ou non). Si vous utilisez un seul constructeur, vous allez vous retrouver avec une signature monstrueuse `new Ordinateur(cpu, ram, disque, gpu, refroidissement, rgb, ...)` et devoir passer plein de `null` pour les paramètres optionnels, rendant le code illisible et source d'erreurs.
+**Exemple du problème :** Imaginons la nécessité de créer un objet `Ordinateur`. Un ordinateur peut avoir un CPU, de la RAM, un disque dur, mais il peut aussi avoir une carte graphique (ou non), un système de refroidissement liquide (ou non), des LEDs RGB (ou non). Si l'on utilise un seul constructeur, on va se retrouver avec une signature monstrueuse `new Ordinateur(cpu, ram, disque, gpu, refroidissement, rgb, ...)` et devoir passer plein de `null` pour les paramètres optionnels, rendant le code illisible et source d'erreurs.
 
 ## Principe de fonctionnement
 
@@ -12,7 +12,7 @@ Le Builder extrait le code de construction de l'objet de sa propre classe et le 
 
 On peut également utiliser un objet "Directeur" qui connaît l'ordre exact des étapes pour construire des configurations courantes (ex: `construirePCGamer()`).
 
-**Analogie :** Pensez à la commande d'une pizza sur mesure ou d'un sandwich chez Subway. Vous ne dites pas au caissier "Je veux un sandwich avec pain blanc, pas de tomate, salade, poulet, pas de fromage, sauce mayo". C'est trop complexe à retenir d'un coup. Vous passez plutôt par une série d'étapes : choix du pain, puis choix de la viande, puis légumes, etc. Le "Builder" est l'employé qui prépare le sandwich étape par étape selon vos instructions.
+**Analogie :** Prenons l'exemple de la commande d'une pizza sur mesure ou d'un sandwich chez Subway. On ne dit pas au caissier "Je veux un sandwich avec pain blanc, pas de tomate, salade, poulet, pas de fromage, sauce mayo". C'est trop complexe à retenir d'un coup. On passe plutôt par une série d'étapes : choix du pain, puis choix de la viande, puis légumes, etc. Le "Builder" est l'employé qui prépare le sandwich étape par étape selon les instructions données.
 
 ## Structure (rôles des classes)
 

@@ -4,13 +4,13 @@
 
 Le pattern Singleton résout le problème de **garantir qu'une classe n'a qu'une seule instance** dans toute l'application et fournit un **point d'accès global** à cette instance.
 
-**Exemple du problème :** Imaginez une application qui gère une connexion à une base de données. Si chaque partie du code crée sa propre connexion, vous vous retrouvez avec des dizaines de connexions ouvertes, gaspillant des ressources. Le Singleton garantit qu'il n'existe qu'une seule connexion partagée par toute l'application.
+**Exemple du problème :** Imaginons une application qui gère une connexion à une base de données. Si chaque partie du code crée sa propre connexion, on se retrouve avec des dizaines de connexions ouvertes, gaspillant des ressources. Le Singleton garantit qu'il n'existe qu'une seule connexion partagée par toute l'application.
 
 ## Principe de fonctionnement
 
 Le pattern Singleton **empêche la création de multiples instances** en rendant le constructeur privé et en fournissant une méthode statique qui retourne toujours la même instance.
 
-**Analogie :** C'est comme un gouvernement d'un pays. Il ne peut y avoir qu'un seul gouvernement officiel à la fois. Peu importe combien de fois vous demandez "qui gouverne ?", vous obtenez toujours la même réponse : le gouvernement actuel unique.
+**Analogie :** Prenons l'exemple du gouvernement d'un pays. Il ne peut y avoir qu'un seul gouvernement officiel à la fois. Peu importe combien de fois on demande "qui gouverne ?", on obtient toujours la même réponse : le gouvernement actuel unique.
 
 Le pattern repose sur :
 - Un **constructeur privé** (impossible de faire `new MaClasse()`)

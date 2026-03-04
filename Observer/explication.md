@@ -4,7 +4,7 @@
 
 Le pattern Observer résout le problème de la **notification automatique** lorsqu'un objet change d'état. Sans ce pattern, il faudrait vérifier manuellement et régulièrement si un objet a changé, ce qui est inefficace et crée un couplage fort entre les objets.
 
-**Exemple du problème :** Imaginez un système de news où plusieurs utilisateurs veulent être notifiés dès qu'une nouvelle actualité est publiée. Sans Observer, chaque utilisateur devrait constamment vérifier s'il y a du nouveau contenu, ce qui est inefficace.
+**Exemple du problème :** Imaginons un système de news où plusieurs utilisateurs veulent être notifiés dès qu'une nouvelle actualité est publiée. Sans Observer, chaque utilisateur devrait constamment vérifier s'il y a du nouveau contenu, ce qui est inefficace.
 
 ## Principe de fonctionnement
 

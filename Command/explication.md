@@ -4,13 +4,13 @@
 
 Le pattern Command résout le problème du **couplage fort entre l'expéditeur d'une requête et son destinataire** (celui qui l'exécute réellement). 
 
-**Exemple du problème :** Imaginez que vous développez le logiciel interne d'une banque. Vous avez des boutons dans l'interface (UI) pour faire des dépôts, des retraits ou des virements. Si vous codez la logique de transaction *directement* dans l'événement "clic" du bouton, l'interface utilisateur devient fortement couplée à la logique métier de la banque. Pire encore : si vous voulez annuler (Undo) une opération, ou planifier un virement dans le temps, vous n'avez aucun moyen de sauvegarder la requête "Virement" sous forme d'objet pour la traiter plus tard.
+**Exemple du problème :** Imaginons le développement du logiciel interne d'une banque. L'interface (UI) possède des boutons pour faire des dépôts, des retraits ou des virements. Si la logique de transaction est codée *directement* dans l'événement "clic" du bouton, l'interface utilisateur devient fortement couplée à la logique métier de la banque. Pire encore : s'il faut annuler (Undo) une opération, ou planifier un virement dans le temps, aucun moyen ne permet de sauvegarder la requête "Virement" sous forme d'objet pour la traiter plus tard.
 
 ## Principe de fonctionnement
 
 Le pattern Command transforme la requête elle-même en un **objet encapsulé**. Cet objet contient toutes les informations nécessaires (les paramètres de la méthode, l'objet ciblé) pour exécuter l'action plus tard.
 
-**Analogie :** Pensez à un client dans un grand restaurant étoilé. Le client (l'expéditeur) ne va pas dans les cuisines crier au cuisinier (le destinataire) la recette qu'il veut manger. À la place, il donne sa commande au serveur. Le serveur écrit cette commande sur un **bout de papier (l'objet Commande)** et le dépose en cuisine. Ce bon de commande contient toutes les infos ("Table 4, Cuisson saignante") et la cuisine peut le traiter quand elle est prête, ou même l'annuler avant qu'il ne soit préparé.
+**Analogie :** Prenons l'exemple d'un client dans un grand restaurant étoilé. Le client (l'expéditeur) ne va pas dans les cuisines crier au cuisinier (le destinataire) la recette qu'il veut manger. À la place, il donne sa commande au serveur. Le serveur écrit cette commande sur un **bout de papier (l'objet Commande)** et le dépose en cuisine. Ce bon de commande contient toutes les infos ("Table 4, Cuisson saignante") et la cuisine peut le traiter quand elle est prête, ou même l'annuler avant qu'il ne soit préparé.
 
 ## Structure (rôles des classes)
 

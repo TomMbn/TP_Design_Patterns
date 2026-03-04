@@ -4,7 +4,7 @@
 
 Le pattern Decorator résout le problème de l'**explosion combinatoire des sous-classes** lorsque l'on souhaite ajouter dynamiquement plusieurs comportements ou responsabilités supplémentaires à un objet.
 
-**Exemple du problème :** Imaginez un jeu vidéo de rôle (RPG). Vous avez une classe `Personnage`. Vous voulez qu'il puisse équiper une épée, un bouclier, ou une armure lourde. Si vous utilisez l'héritage, vous devrez créer `PersonnageAvecEpee`, `PersonnageAvecBouclier`, `PersonnageAvecEpeeEtBouclier`, `PersonnageAvecArmureLourde`, etc. Le nombre de classes pour couvrir toutes les combinaisons possibles devient incontrôlable. De plus, les comportements sont figés à la compilation, on ne peut pas les modifier en cours d'exécution.
+**Exemple du problème :** Imaginons un jeu vidéo de rôle (RPG). Il y a une classe `Personnage`. Le but est qu'il puisse équiper une épée, un bouclier, ou une armure lourde. Si l'on utilise l'héritage, il faudra créer `PersonnageAvecEpee`, `PersonnageAvecBouclier`, `PersonnageAvecEpeeEtBouclier`, `PersonnageAvecArmureLourde`, etc. Le nombre de classes pour couvrir toutes les combinaisons possibles devient incontrôlable. De plus, les comportements sont figés à la compilation, on ne peut pas les modifier en cours d'exécution.
 
 ## Principe de fonctionnement
 
@@ -12,7 +12,7 @@ Le pattern Decorator **"enveloppe" (wraps)** l'objet original dans un objet Déc
 
 Puisque le décorateur a la même interface que l'objet qu'il décore, on peut empiler plusieurs décorateurs les uns sur les autres (comme des poupées russes) !
 
-**Analogie :** Pensez à un abonnement à une plateforme de streaming vidéo (VOD). Vous commencez par souscrire au "Forfait Basique" qui vous donne accès au catalogue (votre classe de base). Ensuite, vous trouvez la qualité trop basse et ajoutez l'option "Résolution 4K" (un décorateur) qui s'ajoute à votre forfait. Le mois suivant, pour partager votre compte, vous ajoutez l'option "Écrans Multiples" (un deuxième décorateur) par-dessus. Le prix mensuel et les fonctionnalités se cumulent dynamiquement à chaque couche ajoutée. Vous n'avez pas eu besoin que la plateforme crée un forfait fixe appelé "Basique + 4K + Multi-écrans", vous avez simplement "décoré" votre abonnement de base avec les options désirées à la volée.
+**Analogie :** Prenons l'exemple d'un abonnement à une plateforme de streaming vidéo (VOD). On commence par souscrire au "Forfait Basique" qui donne accès au catalogue (la classe de base). Ensuite, si la qualité semble trop basse, on ajoute l'option "Résolution 4K" (un décorateur) qui s'ajoute au forfait. Le mois suivant, pour partager le compte, on ajoute l'option "Écrans Multiples" (un deuxième décorateur) par-dessus. Le prix mensuel et les fonctionnalités se cumulent dynamiquement à chaque couche ajoutée. Il n'est pas nécessaire que la plateforme crée un forfait fixe appelé "Basique + 4K + Multi-écrans", on a simplement "décoré" l'abonnement de base avec les options désirées à la volée.
 ## Structure (rôles des classes)
 
 ### 1. **Component (Sujet abstrait)**

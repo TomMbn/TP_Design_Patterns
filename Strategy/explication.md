@@ -4,13 +4,13 @@
 
 Le pattern Strategy résout le problème de la **sélection d'algorithmes à l'exécution**. Sans ce pattern, on se retrouve souvent avec des structures conditionnelles complexes (if/else ou switch) qui rendent le code difficile à maintenir et à étendre.
 
-**Exemple du problème :** Imaginez un système de compression de fichiers qui doit gérer plusieurs algorithmes (ZIP, GZIP, RAR, compression rapide). Sans Strategy, vous auriez un énorme bloc if/else dans votre code, et ajouter un nouvel algorithme nécessiterait de modifier le code existant, violant le principe Ouvert/Fermé.
+**Exemple du problème :** Imaginons un système de compression de fichiers qui doit gérer plusieurs algorithmes (ZIP, GZIP, RAR, compression rapide). Sans Strategy, on aurait un énorme bloc if/else dans le code, et ajouter un nouvel algorithme nécessiterait de modifier le code existant, violant le principe Ouvert/Fermé.
 
 ## Principe de fonctionnement
 
 Le pattern Strategy permet de **définir une famille d'algorithmes**, de les **encapsuler** dans des classes séparées, et de les rendre **interchangeables**. Le client peut choisir quel algorithme utiliser sans connaître les détails de son implémentation.
 
-**Analogie :** C'est comme choisir un algorithme de compression pour archiver des fichiers. Vous pouvez utiliser ZIP (équilibré), GZIP (optimisé web), ou compression rapide (vitesse). Chaque algorithme a sa propre logique (taux de compression, vitesse, compatibilité), mais l'objectif reste le même : réduire la taille du fichier. Vous choisissez la stratégie selon le contexte (type de fichier, priorité vitesse/taille, usage final).
+**Analogie :** Prenons l'exemple du choix d'un algorithme de compression pour archiver des fichiers. On peut utiliser ZIP (équilibré), GZIP (optimisé web), ou compression rapide (vitesse). Chaque algorithme a sa propre logique (taux de compression, vitesse, compatibilité), mais l'objectif reste le même : réduire la taille du fichier. On choisit la stratégie selon le contexte (type de fichier, priority vitesse/taille, usage final).
 
 Le pattern se base sur la **composition plutôt que l'héritage** : au lieu de créer des sous-classes pour chaque variante, on injecte le comportement souhaité.
 
@@ -46,7 +46,7 @@ Le pattern se base sur la **composition plutôt que l'héritage** : au lieu de c
 ❌ **Complexité accrue** : Pour des cas simples, le pattern peut être trop lourd (over-engineering)  
 ❌ **Le client doit connaître les différences** : Le client doit savoir quelle stratégie choisir  
 ❌ **Overhead de communication** : Le contexte et la stratégie doivent partager des données  
-❌ **Pas adapté si les algorithmes changent rarement** : Si vous n'avez que 2-3 variantes stables, un simple if/else peut suffire
+❌ **Pas adapté si les algorithmes changent rarement** : S'il n'y a que 2-3 variantes stables, un simple if/else peut suffire
 
 ## Cas d'usage réel possible
 

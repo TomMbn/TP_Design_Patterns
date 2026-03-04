@@ -4,13 +4,13 @@
 
 Le pattern Adapter résout le problème de **l'incompatibilité entre interfaces**. Il permet de faire fonctionner ensemble des classes qui ne pourraient pas collaborer autrement à cause d'interfaces incompatibles.
 
-**Exemple du problème :** Imaginez que vous avez une application qui utilise une bibliothèque de logs moderne, mais vous devez intégrer un ancien système de monitoring qui attend un format différent. Sans Adapter, vous devriez modifier soit votre code, soit la bibliothèque externe (souvent impossible), ou réécrire tout le système de logs.
+**Exemple du problème :** Imaginons une application qui utilise une bibliothèque de logs moderne, mais qui doit intégrer un ancien système de monitoring qui attend un format différent. Sans Adapter, il faudrait modifier soit le code interne, soit la bibliothèque externe (souvent impossible), ou réécrire tout le système de logs.
 
 ## Principe de fonctionnement
 
 Le pattern Adapter agit comme un **traducteur** entre deux interfaces incompatibles. Il enveloppe un objet existant et expose une nouvelle interface que le client attend, tout en traduisant les appels vers l'interface d'origine.
 
-**Analogie :** C'est comme un adaptateur de prise électrique quand vous voyagez à l'étranger. Votre chargeur (client) a une prise française, mais la prise murale (service) est britannique. L'adaptateur permet de connecter les deux sans modifier ni le chargeur ni l'installation électrique.
+**Analogie :** C'est comme un adaptateur de prise électrique lors d'un voyage à l'étranger. Le chargeur (client) a une prise française, mais la prise murale (service) est britannique. L'adaptateur permet de connecter les deux sans modifier ni le chargeur ni l'installation électrique.
 
 Il existe deux types d'Adapter :
 - **Adapter par composition** : L'adaptateur contient une instance de la classe à adapter

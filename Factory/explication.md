@@ -4,7 +4,7 @@
 
 Le pattern Factory Method résout le problème de la **création d'objets sans spécifier leur classe concrète**. Il permet de déléguer la logique d'instanciation aux sous-classes, évitant ainsi un couplage fort entre le code client et les classes concrètes.
 
-**Exemple du problème :** Imaginez une application de notifications qui doit envoyer des messages par Email, SMS ou Push. Sans Factory Method, le code client devrait connaître toutes les classes concrètes (`new EmailNotification()`, `new SmsNotification()`, etc.) et utiliser des conditionnelles pour choisir laquelle instancier, créant un couplage fort et violant le principe Ouvert/Fermé.
+**Exemple du problème :** Imaginons une application de notifications qui doit envoyer des messages par Email, SMS ou Push. Sans Factory Method, le code client devrait connaître toutes les classes concrètes (`new EmailNotification()`, `new SmsNotification()`, etc.) et utiliser des conditionnelles pour choisir laquelle instancier, créant un couplage fort et violant le principe Ouvert/Fermé.
 
 ## Principe de fonctionnement
 

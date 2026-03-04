@@ -4,13 +4,13 @@
 
 Le pattern Facade résout le problème de la **complexité d'utilisation d'un système vaste et complexe** (composé de nombreuses classes et sous-systèmes). 
 
-**Exemple du problème :** Imaginez que vous deviez intégrer une bibliothèque complexe pour faire du déploiement d'applications. Pour déployer une simple application, vous devez initialiser un gestionnaire Git, récupérer le code, configurer un système de build, compiler le code, configurer un serveur cloud, y envoyer les fichiers, puis redémarrer les services. Cela oblige le code client (votre script) à connaître en détail toutes ces classes et étapes, créant un **couplage fort** entre votre application et le fonctionnement interne de cette bibliothèque.
+**Exemple du problème :** Imaginons le besoin d'intégrer une bibliothèque complexe pour faire du déploiement d'applications. Pour déployer une simple application, il faut initialiser un gestionnaire Git, récupérer le code, configurer un système de build, compiler le code, configurer un serveur cloud, y envoyer les fichiers, puis redémarrer les services. Cela oblige le code client (le script) à connaître en détail toutes ces classes et étapes, créant un **couplage fort** entre l'application et le fonctionnement interne de cette bibliothèque.
 
 ## Principe de fonctionnement
 
 Le pattern Facade **fournit une interface simplifiée (une classe "Façade")** de plus haut niveau pour interagir avec un sous-système complexe. Cette façade délègue intelligemment les requêtes simples du client aux différents composants appropriés du sous-système.
 
-**Analogie :** Pensez au bouton "Démarrer" de votre voiture. En tant que conducteur (le client), vous n'avez qu'à appuyer sur un seul bouton (la façade). Sous le capot, des dizaines de systèmes s'activent dans un ordre précis : la pompe à carburant s'allume, le démarreur tourne, les bougies s'activent, l'alternateur prend le relais. Vous n'avez pas besoin de savoir comment tout ça fonctionne dans le détail, la façade s'en occupe pour vous.
+**Analogie :** Prenons l'exemple du bouton "Démarrer" d'une voiture. Un conducteur (le client) n'a qu'à appuyer sur un seul bouton (la façade). Sous le capot, des dizaines de systèmes s'activent dans un ordre précis : la pompe à carburant s'allume, le démarreur tourne, les bougies s'activent, l'alternateur prend le relais. Il n'est pas nécessaire de savoir comment tout cela fonctionne dans le détail, la façade s'en occupe.
 
 ## Structure (rôles des classes)
 

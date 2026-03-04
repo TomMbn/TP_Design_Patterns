@@ -4,13 +4,13 @@
 
 Le pattern Abstract Factory résout le problème de la **création de familles d'objets liés ou dépendants** sans avoir à spécifier leurs classes concrètes. Il permet de s'assurer que les objets créés ensemble sont compatibles entre eux.
 
-**Exemple du problème :** Imaginez que vous développez un système pour des maisons connectées (Smart Home). Vous avez différents types de périphériques (ampoules, thermostats) qui peuvent appartenir à différents écosystèmes (Apple HomeKit, Google Home). Si vous mélangez une ampoule Apple avec un thermostat Google, ils risquent de ne pas communiquer correctement avec le même hub central. Le code client a besoin d'un moyen de créer des composants d'un même écosystème sans avoir à connaître les détails de chaque classe concrète.
+**Exemple du problème :** Imaginons le développement d'un système pour des maisons connectées (Smart Home). Il existe différents types de périphériques (ampoules, thermostats) qui peuvent appartenir à différents écosystèmes (Apple HomeKit, Google Home). Si l'on mélange une ampoule Apple avec un thermostat Google, ils risquent de ne pas communiquer correctement avec le même hub central. Le code client a besoin d'un moyen de créer des composants d'un même écosystème sans avoir à connaître les détails de chaque classe concrète.
 
 ## Principe de fonctionnement
 
 L'Abstract Factory fournit une interface pour créer des familles d'objets apparentés ou dépendants. Pour chaque famille d'objets (ex: écosystème Apple), une fabrique concrète est implémentée pour instancier les produits de cette famille.
 
-**Analogie :** Pensez à l'achat d'un menu dans une chaîne de restauration rapide. Si vous allez chez McDonald's (la fabrique), ils ne vont pas vous donner un Big Mac avec des frites Burger King et une boisson KFC pour accompagner. Quand vous commandez un "Menu Burger", la fabrique McDonald's crée une famille de produits spécifiques à sa marque (Burger McDo, Frites McDo, Boisson McDo) qui vont tous bien ensemble. Si vous changez de fabrique (en allant chez KFC), vous obtiendrez une autre famille de produits avec la même structure de menu (Burger Poulet, Frites KFC, Boisson Pepsi), mais tous cohérents avec l'écosystème de cette nouvelle chaîne.
+**Analogie :** Prenons l'exemple de l'achat d'un menu dans une chaîne de restauration rapide. En allant chez McDonald's (la fabrique), ils ne donnent pas un Big Mac avec des frites Burger King et une boisson KFC pour accompagner. Quand on commande un "Menu Burger", la fabrique McDonald's crée une famille de produits spécifiques à sa marque (Burger McDo, Frites McDo, Boisson McDo) qui vont tous bien ensemble. Si l'on change de fabrique (en allant chez KFC), on obtiendra une autre famille de produits avec la même structure de menu (Burger Poulet, Frites KFC, Boisson Pepsi), mais tous cohérents avec l'écosystème de cette nouvelle chaîne.
 
 Le pattern repose sur :
 - Des **interfaces pour les sous-produits** (ex: Ampoule, Thermostat)
@@ -42,12 +42,12 @@ Le pattern repose sur :
 ✅ **Compatibilité garantie** : Assure que tous les produits créés par une fabrique fonctionneront bien ensemble.  
 ✅ **Découplage** : Le code client manipule des interfaces, pas des classes concrètes (respect de l'inversion de dépendance).  
 ✅ **Single Responsibility Principle (SRP)** : La logique de création est centralisée dans les fabriques.  
-✅ **Open/Closed Principle (OCP)** : Vous pouvez ajouter de nouvelles familles de produits (ex: ajouter Amazon Alexa) sans casser le code existant.
+✅ **Open/Closed Principle (OCP)** : Il est possible d'ajouter de nouvelles familles de produits (ex: ajouter Amazon Alexa) sans casser le code existant.
 
 ## Inconvénients
 
 ❌ **Complexité structurelle** : Introduit beaucoup de nouvelles interfaces et de classes dans le projet.  
-❌ **Difficulté d'ajouter de nouveaux *types* de produits** : Si vous voulez ajouter une `Camera` à toutes les familles, vous devez modifier l'interface `AbstractFactory` et **toutes** les fabriques concrètes existantes.
+❌ **Difficulté d'ajouter de nouveaux *types* de produits** : S'il faut ajouter une `Camera` à toutes les familles, il est nécessaire de modifier l'interface `AbstractFactory` et **toutes** les fabriques concrètes existantes.
 
 ## Cas d'usage réel possible
 
